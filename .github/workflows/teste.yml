@@ -1,7 +1,9 @@
+	name: Update README with Changelog
+
 on:
   push:
-    branches:
-      - main   # ou troque pela branch principal do seu projeto
+    branches: [main]   # ou troque pela branch principal do seu projeto
+      
 
 jobs:
   update-readme:
