@@ -30,7 +30,6 @@ jobs:
           fi
           
           # Adiciona a nova entrada com data e hora
-          # O comando sed já está correto para inserir a data.
           sed -i "s|## Changelog|## Changelog\n- $(date '+%Y-%m-%d %H:%M') - $COMMIT_MESSAGE|" README.md
 
       - name: Commit changes
@@ -39,5 +38,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "docs: update changelog with last commit message" || echo "No changes to commit"
-          # O push só funcionará se a permissão 'contents: write' estiver configurada.
           git push
