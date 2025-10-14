@@ -24,6 +24,8 @@ jobs:
         run: |
           COMMIT_MESSAGE="${{ steps.last_commit.outputs.message }}"
           
+          DATE_ENTRY=$(TZ='America/Sao_Paulo' date '+%d/%m/%Y %H:%M') 
+
           # Se não existir "## Changelog", cria
           if ! grep -q "## Changelog" README.md; then
             echo -e "\n## Changelog\n" >> README.md
